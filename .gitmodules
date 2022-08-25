@@ -1,7 +1,3 @@
-[submodule "external/garrysmod_common-x86-64"]
-	path = external/garrysmod_common-x86-64
-	url = https://github.com/danielga/garrysmod_common
-	branch = x86-64-support-sourcesdk
 [submodule "external/gmod-module-base"]
 	path = external/gmod-module-base
 	url = https://github.com/Facepunch/gmod-module-base
@@ -9,3 +5,7 @@
 [submodule "external/metamod-source"]
 	path = external/metamod-source
 	url = https://github.com/alliedmodders/metamod-source
+[submodule "external/garrysmod_common"]
+	path = external/garrysmod_common
+	url = https://github.com/danielga/garrysmod_common.git
+	branch = master

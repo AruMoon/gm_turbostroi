@@ -24,7 +24,8 @@ CreateProject({
     --source_path = project_source_path -- optional
 })
 
-files { "source/gmsv_turbostroi_win32.rc",
+--files { "source/gmsv_turbostroi_win32.rc",
+files {
 "external/metamod-source/core/sourcehook/sourcehook.cpp",
 "external/metamod-source/core/sourcehook/sourcehook_hookmangen.cpp",
 "external/metamod-source/core/sourcehook/sourcehook_impl_chookidman.cpp",
@@ -50,10 +51,23 @@ filter("system:windows or macosx")
 
 filter({"system:linux", "architecture:x86"})
 	libdirs("external/luajit/linux32")
-	links("lua51", "luajit")
+	links("luajit")
+--	links("luajit-5.1")
+
+--	links("boost_thread", "boost_timer", "boost_atomic", "boost_chrono", "rt")
+	links("boost_thread", "pthread", "boost_chrono", "boost_timer", "boost_atomic", "rt", "dl")
+
+--	links("lua51", "luajit")
 
 filter({"system:linux", "architecture:x86_64"})
-	links("lua51", "luajit")
+	links("luajit")
+
+--	links("boost_thread", "boost_timer", "boost_atomic", "boost_chrono", "rt")
+
+	links("boost_thread", "pthread", "boost_chrono", "boost_timer", "boost_atomic", "rt", "dl")
+
+--	links("boost_system", "boost_timer", "boost_atomic", "boost_chrono", "boost_thread", "rt")
+--	links("lua51", "luajit")
 
 filter({})
 
